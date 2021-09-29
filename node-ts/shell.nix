@@ -7,7 +7,7 @@ stdenv.mkDerivation {
         nodejs-12_x
         yarn
         nodePackages.typescript
-        mongodb-4_2
+        # mongodb-4_2
     ];
     shellHook = ''
         export PATH="$PWD/node_modules/.bin/:$PATH"
