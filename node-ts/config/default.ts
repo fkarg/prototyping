@@ -1,7 +1,12 @@
 export default {
   port: 1337,
   host: "localhost",
-  dbUri: "mongodb://localhost:27017/rest-api",
+  // dbUri: "mongodb://root:example@localhost:27017/rest-api",
+  dbUri: "mongodb://localhost:27017/test",
+  db: {
+      user: 'user',
+      pass: 'abcd',
+  },
   saltWorkFactor: 13,
 
   /**

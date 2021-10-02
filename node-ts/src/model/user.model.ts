@@ -1,6 +1,7 @@
 import mongoose from "mongoose"; // ORM for mongodb
 import bcrypt from "bcrypt"; // for password hashes
 import config from "config"; // configuration
+import log from "../logger"; // logging
 
 export interface UserDocument extends mongoose.Document {
   email: string;
@@ -34,6 +35,8 @@ UserSchema.pre("save", async function () {
 
   // Replace the password with the hash
   user.password = hash;
+
+  log.info("Created new user: ", user);
 });
 
 

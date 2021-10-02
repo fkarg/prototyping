@@ -7,13 +7,16 @@ function connect() {
 
   return mongoose
     .connect(dbUri, {
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
+        user: config.get("db.user") as string,
+        pass: config.get("db.pass") as string,
+        // user: 'user',
+        // pass: 'abcd',
     })
     .then(() => {
       log.info("Database connected");
     })
     .catch((error) => {
+      console.log(error);
       log.error("db error", error);
       process.exit(1);
     });
